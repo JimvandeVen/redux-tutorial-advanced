@@ -4,7 +4,7 @@ import { SELECT_SUBREDDIT, INVALIDATE_SUBREDDIT, RECEIVE_POSTS, REQUEST_POSTS } 
 function selectedSubreddit(state = 'reactjs', action) {
   switch (action.type) {
     case SELECT_SUBREDDIT:
-      return action.SELECT_SUBREDDIT
+      return action.type
     default:
       return state
   }

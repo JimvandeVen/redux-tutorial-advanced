@@ -51,13 +51,19 @@ class AsyncApp extends Component {
     )
   }
 }
+
+AsyncApp.defaultProps = {
+  lastUpdated: null,
+}
+
 AsyncApp.propTypes = {
   selectedSubreddit: PropTypes.string.isRequired,
-  posts: PropTypes.arrayOf.isRequired,
+  posts: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
-  lastUpdated: PropTypes.number.isRequired,
+  lastUpdated: PropTypes.number,
   dispatch: PropTypes.func.isRequired,
 }
+
 function mapStateToProps(state) {
   const { selectedSubreddit, postsBySubreddit } = state
   const { isFetching, lastUpdated, items: posts } = postsBySubreddit[selectedSubreddit] || {
