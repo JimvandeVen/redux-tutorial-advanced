@@ -44,7 +44,7 @@ class AsyncApp extends Component {
         {!isFetching && posts.length === 0 && <h2>Empty.</h2>}
         {posts.length > 0 && (
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
-            <Posts posts={posts} />
+            <Posts posts={posts /* Er gaat iets niet helemaal goed met de received posts */} />
           </div>
         )}
       </div>
@@ -58,6 +58,7 @@ AsyncApp.defaultProps = {
 
 AsyncApp.propTypes = {
   selectedSubreddit: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
   posts: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
   lastUpdated: PropTypes.number,

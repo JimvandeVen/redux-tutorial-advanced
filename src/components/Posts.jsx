@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 const Posts = (props) => (
   <ul>
-    {console.log(props)}
     {props.posts.map((post) => (
       <li key={post.id}>{post.title}</li>
     ))}
